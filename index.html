@@ -3,135 +3,147 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uber home page</title>
+    <meta
+      name="description"
+      content="Uber - Go anywhere, get anything. Request a ride, order food, send packages, and more."
+    />
+    <title>Uber | Go anywhere, get anything</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="main-page">
+      <!-- ================= HEADER / NAV ================= -->
       <header>
-        <div class="logo-img">
-          <h1>Uber</h1>
-        </div>
         <nav>
+          <h1>Uber</h1>
+
           <div class="first-nav">
-            <ul>
-              <a href="">Rider</a>
-            </ul>
-            <ul>
-              <a href="">Drive</a>
-            </ul>
-            <ul>
-              <a href="">Travel</a>
-            </ul>
-            <ul>
-              <a href="">Bussiness</a>
-            </ul>
-            <ul>
-              <a href="">About</a>
-            </ul>
+            <a href="#">Ride</a>
+            <a href="#">Drive</a>
+            <a href="#">Travel</a>
+            <a href="#">Business</a>
+            <a href="#">About</a>
           </div>
+
           <div class="second-nav">
-            <ul>
-              <a href="">EN</a>
-            </ul>
-            <ul>
-              <a href="">Help</a>
-            </ul>
-            <ul>
-              <a href="">Log in</a>
-            </ul>
-            <ul>
-              <a href="">sign up</a>
-            </ul>
+            <a href="#">EN</a>
+            <a href="#">Help</a>
+            <a href="#">Log in</a>
+            <a href="#">Sign up</a>
           </div>
         </nav>
       </header>
-      <!-- this part for making login page or other infon -->
+
+      <!-- ================= HERO ================= -->
       <main>
         <div class="main-first">
-          <h2>Delhi NCR,In <a href="#">change city</a></h2>
+          <h2>Delhi NCR, IN <a href="#">Change city</a></h2>
           <h3>Go anywhere</h3>
-          <button>Pickup now</button>
-          <input type="pickup" id="pickup" placeholder="pickup loaction" />
-          <input type="Drop" name="Drop" id="Dropoff loaction" />
-          <a href="#">See prices</a>
-          <a href="#">Log in to cheak your activity</a>
+
+          <input type="text" id="pickup" placeholder="Pickup location" />
+          <input type="text" id="dropoff" placeholder="Dropoff location" />
+
+          <button type="button">See prices</button>
+          <a href="#">Log in to check your activity</a>
         </div>
+
         <div class="main-second">
-          <img src="" alt="main-img" />
+          <img src="main-img.png" alt="Uber ride" />
         </div>
       </main>
-      <!-- this section for explor to other features -->
+
+      <!-- ================= EXPLORE SECTION ================= -->
       <section>
         <div class="section-first">
-          <h3>Explor what you can do with Uber</h3>
+          <h3>Explore what you can do with Uber</h3>
+
           <div class="boxs">
-            <div class="box1">
+            <div class="box">
               <div class="box-text">
                 <h5>Ride</h5>
-                <p>Go anywhare with Uber request a ride, hop in and go.</p>
-                <a href="#">Detalis</a>
+                <p>Go anywhere with Uber — request a ride, hop in and go.</p>
+                <a href="#">Details</a>
               </div>
-              <div class="box-img"><img src="" alt="" /></div>
+              <div class="box-img">
+                <img src="car.png" alt="Car ride" />
+              </div>
             </div>
-            <div class="box2">
+
+            <div class="box">
               <div class="box-text">
                 <h5>Reserve</h5>
                 <p>
                   Reserve your ride in advance so you can relax on the day of
                   your trip.
                 </p>
-                <a href="#">Detalis</a>
+                <a href="#">Details</a>
               </div>
-              <div class="box-img"><img src="" alt="" /></div>
+              <div class="box-img">
+                <img src="calander.png" alt="Calendar reservation" />
+              </div>
             </div>
-            <div class="box3">
+
+            <div class="box">
               <div class="box-text">
                 <h5>Bike</h5>
                 <p>
                   Get affordable motorbike rides in minutes at your doorstep.
                 </p>
-                <a href="#">Detalis</a>
+                <a href="#">Details</a>
               </div>
-              <div class="box-img"><img src="" alt="" /></div>
+              <div class="box-img">
+                <img src="bike.png" alt="Bike ride" />
+              </div>
             </div>
-            <div class="box4">
+
+            <div class="box">
               <div class="box-text">
                 <h5>Intercity</h5>
                 <p>
                   Get convenient, affordable outstation cabs anytime at your
                   door.
                 </p>
-                <a href="#">Detalis</a>
+                <a href="#">Details</a>
               </div>
-              <div class="box-img"><img src="" alt="" /></div>
+              <div class="box-img">
+                <img src="parcle.png" alt="Intercity cab" />
+              </div>
             </div>
-            <div class="box5">
+
+            <div class="box">
               <div class="box-text">
                 <h5>Parcel</h5>
                 <p>Uber makes same-day item delivery easier than ever.</p>
-                <a href="#">Detalis</a>
+                <a href="#">Details</a>
               </div>
-              <div class="box-img"><img src="" alt="" /></div>
+              <div class="box-img">
+                <img src="lock.png" alt="Parcel delivery" />
+              </div>
             </div>
-            <div class="box6">
+
+            <div class="box">
               <div class="box-text">
                 <h5>Airport</h5>
                 <p>
                   Request a ride to or from the airport with room for your
                   luggage.
                 </p>
-                <a href="#">Detalis</a>
+                <a href="#">Details</a>
               </div>
-              <div class="box-img"><img src="" alt="" /></div>
+              <div class="box-img">
+                <img src="lugae.png" alt="Airport ride" />
+              </div>
             </div>
           </div>
         </div>
-        <!-- second main folder start how to book your right  -->
+
+        <!-- ================= HOW TO REQUEST A RIDE ================= -->
         <h3>How to request a ride</h3>
-        <div class="box-img/text-folder">
-          <div class="boxs-folder1">
+
+        <div class="box-der">
+          <div class="boxs-folder">
             <div class="box-img-folder">
-              <img src="" alt="" />
+              <img src="book.png" alt="Book a ride" />
             </div>
             <div class="box-text-folder">
               <h3>Get started</h3>
@@ -141,21 +153,23 @@
               </h4>
             </div>
           </div>
-          <div class="boxs-folder2">
+
+          <div class="boxs-folder">
             <div class="box-img-folder">
-              <img src="" alt="" />
+              <img src="drive.png" alt="Match with driver" />
             </div>
             <div class="box-text-folder">
               <h3>Get matched with a driver</h3>
               <h4>
                 A nearby driver accepts your request. You'll be notified when
-                they're close..
+                they're close.
               </h4>
             </div>
           </div>
-          <div class="boxs-folder3">
+
+          <div class="boxs-folder">
             <div class="box-img-folder">
-              <img src="" alt="" />
+              <img src="veryfie.png" alt="Verify driver" />
             </div>
             <div class="box-text-folder">
               <h3>Meet your driver</h3>
@@ -165,9 +179,10 @@
               </h4>
             </div>
           </div>
-          <div class="boxs-folder4">
+
+          <div class="boxs-folder">
             <div class="box-img-folder">
-              <img src="" alt="" />
+              <img src="comfort.png" alt="Enjoy the ride" />
             </div>
             <div class="box-text-folder">
               <h3>Enjoy the ride</h3>
@@ -176,90 +191,97 @@
               </h4>
             </div>
           </div>
+
           <div class="boxs-folder">
             <div class="box-img-folder">
-              <img src="" alt="" />
+              <img src="remark.png" alt="Rate and tip" />
             </div>
             <div class="box-text-folder">
               <h3>Rate and tip</h3>
               <h4>
-                Please leave feedback about your trip, and you’ll also be able
+                Please leave feedback about your trip, and you'll also be able
                 to tip your driver.
               </h4>
             </div>
           </div>
         </div>
-        <div class="main-third">
-          <div class="plain-text">
-            <h3>Planning your next getaway?</h3>
-            <p>
-              From weekend road trip to international destination, we've got you
-              covered. Explore transport options, points of interest, and more
-              with our new City Hub.
-            </p>
-            <a href="#">Delhi NCR</a>
-          </div>
-          <div class="plain-img">
-            <img src="" alt="" />
-          </div>
+
+        <!-- ================= PLAIN TEXT CTA ================= -->
+        <div class="plain-text">
+          <h3>Planning your next getaway?</h3>
+          <p>
+            From weekend road trips to international destinations, we've got you
+            covered. Explore transport options, points of interest, and more
+            with our new City Hub.
+          </p>
+          <a href="#">Delhi NCR</a>
         </div>
-        <!-- this section for ohter frture form uber -->
+
+        <!-- ================= MORE WAYS TO USE UBER ================= -->
         <div class="more-ways">
           <h3>More ways to use Uber</h3>
+
           <div class="more-folders">
             <div class="cards">
-              <div class="card1">
-                <img src="" alt="" />
+              <div class="card">
+                <img src="move.png" alt="Plan your trip" />
                 <h5>Plan your trip in advance</h5>
                 <p>
                   Book your ride up to 90 days ahead by choosing Reserve on
                   Uber.com or in the app.
                 </p>
-                <a href="#">Reserv now</a>
+                <a href="#">Reserve now</a>
               </div>
-              <div class="card2">
-                <img src="" alt="" />
+
+              <div class="card">
+                <img src="shultel.png" alt="Ride in style" />
                 <h5>Ride in style</h5>
                 <p>Travel in high-end vehicles with our top-rated drivers.</p>
                 <a href="#">See prices</a>
               </div>
-              <div class="card3">
-                <img src="" alt="" />
+
+              <div class="card">
+                <img src="preimum.png" alt="Send package" />
                 <h5>Send items within the day</h5>
                 <p>
-                  Get same-day local deivery of forgotten keys, care packages,
-                  and much more
+                  Get same-day local delivery of forgotten keys, care packages,
+                  and much more.
                 </p>
                 <a href="#">Send a package</a>
               </div>
             </div>
           </div>
         </div>
-        <!-- this for earn and uber like thinks -->
+
+        <!-- ================= EARN WITH UBER ================= -->
         <div class="earn-folder">
           <h1>Earn with Uber</h1>
+
           <div class="earn-box">
             <div class="earn-card">
               <div class="earn-card1">
-                <img src="" alt="" />
+                <img src="enjoy.png" alt="Drive and earn" />
                 <h4>Drive and earn on your schedule</h4>
                 <h5>Make money with rides. Use your car or rent one.</h5>
                 <a href="#">Sign up to drive</a>
               </div>
+
               <div class="earn-card2">
-                <img src="" alt="" />
+                <img src="ohterskills.png" alt="Earn with skills" />
                 <h4>Earn with your specialized skills</h4>
                 <h5>
                   Turn your expertise into a remote earning opportunity with
                   Uber AI Solutions.
                 </h5>
-                <a href="#">sign up</a>
+                <a href="#">Sign up</a>
               </div>
             </div>
           </div>
+
+          <!-- ================= BUSINESS SPLIT ================= -->
           <div class="ohter">
             <div class="ohter-img">
-              <img src="" alt="" />
+              <img src="cover-2.png" alt="Uber for business" />
             </div>
             <div class="ohter-text">
               <h4>All the benefits of Uber, reimagined for business</h4>
@@ -271,122 +293,95 @@
               <a href="#">Learn more</a>
             </div>
           </div>
-          <!-- this section for dowland for ios and andriod section -->
+
+          <!-- ================= DOWNLOAD APPS ================= -->
           <div class="easer">
-            <h3>It’s easier in the apps</h3>
+            <h3>It's easier in the apps</h3>
+
             <div class="erser-folder">
               <div class="easre1">
-                <img src="" alt="" />
+                <img src="ios.png" alt="Download on iOS" />
                 <h4>Download Uber app</h4>
                 <p>Scan to download</p>
               </div>
+
               <div class="easer2">
-                <img src="" alt="" />
+                <img src="andorid.png" alt="Download on Android" />
                 <h4>Download Uber app</h4>
                 <p>Scan to download</p>
               </div>
             </div>
           </div>
-          <!-- this is most important part of bussinsse  -->
+
+          <!-- ================= RENT OUT YOUR CAR ================= -->
           <div class="get">
             <div class="get1">
-              <img src="" alt="" />
+              <img src="cover.png" alt="Rent out your car" />
             </div>
             <div class="get2">
               <h3>Make money by renting out your car</h3>
               <p>
                 Connect with thousands of drivers and earn more per week with
-                Uber’s free fleet management tools.
+                Uber's free fleet management tools.
               </p>
               <a href="#">Get started</a>
             </div>
           </div>
         </div>
       </section>
-      <!-- this is end section of folder to make last complte site -->
+
+      <!-- ================= FOOTER ================= -->
       <footer>
         <div class="first-1">
           <h1>Uber</h1>
         </div>
+
         <div class="first-2">
-          <div class="campany">
-            <h3>Campany</h3>
+          <div class="company">
+            <h3>Company</h3>
             <ul>
-              <a href="">About us</a>
-            </ul>
-            <ul>
-              <a href="">Our offerings</a>
-            </ul>
-            <ul>
-              <a href="">Nwesroom</a>
-            </ul>
-            <ul>
-              <a href="">Investor</a>
-            </ul>
-            <ul>
-              <a href="">Blog</a>
-            </ul>
-            <ul>
-              <a href="">Careeer</a>
-            </ul>
-            <ul>
-              <a href="">Uber One</a>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Our offerings</a></li>
+              <li><a href="#">Newsroom</a></li>
+              <li><a href="#">Investor</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Uber One</a></li>
             </ul>
           </div>
+
           <div class="product">
-            <h3>product</h3>
+            <h3>Products</h3>
             <ul>
-              <a href="">Ride</a>
-            </ul>
-            <ul>
-              <a href="">eat</a>
-            </ul>
-            <ul>
-              <a href="">Drive</a>
-            </ul>
-            <ul>
-              <a href="">Uber for Business</a>
-            </ul>
-            <ul>
-              <a href="">Uber fright</a>
-            </ul>
-            <ul>
-              <a href="">Gift cards</a>
-            </ul>
-            <ul>
-              <a href="">Uber Health</a>
-            </ul>
-            <ul>
-              <a href="">Uber Advertising</a>
+              <li><a href="#">Ride</a></li>
+              <li><a href="#">Eat</a></li>
+              <li><a href="#">Drive</a></li>
+              <li><a href="#">Uber for Business</a></li>
+              <li><a href="#">Uber Freight</a></li>
+              <li><a href="#">Gift cards</a></li>
+              <li><a href="#">Uber Health</a></li>
+              <li><a href="#">Uber Advertising</a></li>
             </ul>
           </div>
+
           <div class="global">
-            <h3>Global citizen</h3>
-            <h3>Global citizen</h3>
+            <h3>Global citizenship</h3>
             <ul>
-              <a href="">Safty</a>
-            </ul>
-            <ul>
-              <a href="">Sustainablity</a>
+              <li><a href="#">Safety</a></li>
+              <li><a href="#">Sustainability</a></li>
             </ul>
           </div>
-          <div class="Travel">
-            <h3>travel</h3>
+
+          <div class="travel">
+            <h3>Travel</h3>
             <ul>
-              <a href="">Reserv</a>
-            </ul>
-            <ul>
-              <a href="">Airport</a>
-            </ul>
-            <ul>
-              <a href="">Hotels</a>
-            </ul>
-            <ul>
-              <a href="">citizen</a>
+              <li><a href="#">Reserve</a></li>
+              <li><a href="#">Airport</a></li>
+              <li><a href="#">Hotels</a></li>
+              <li><a href="#">City Hub</a></li>
             </ul>
           </div>
         </div>
-        <!-- end and main line for  -->
 
         <div class="last-line">
           <h6>© 2026 Uber Technologies Inc.</h6>

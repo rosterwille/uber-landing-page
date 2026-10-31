@@ -1,19 +1,801 @@
-*{
+/* ============================================
+   RESET & BASE
+   ============================================ */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+
+:root {
+    --color: #f5f5f5;
+    --color-muted: #b8b8b8;
+    --background-color: #000;
+    --surface: #111;
+    --border: #2a2a2a;
+    --accent: #ffffff;
+    --radius: 12px;
+    --container: 1200px;
+}
+
+html {
     scroll-behavior: smooth;
 }
-html,body{
-      width: 100%;
-      height: 100%;
+
+html, body {
+    width: 100%;
+    min-height: 100%;
 }
+
 body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--color);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color);
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-muted);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+}
+
+::selection {
+    background: #fff;
+    color: #000;
+}
+
+/* ============================================
+   LAYOUT CONTAINER
+   ============================================ */
+.main-page {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   HEADER / NAV
+   ============================================ */
+header {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+nav h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.first-nav,
+.second-nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.first-nav a,
+.second-nav a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 6px 0;
+    margin: 0;
+    position: relative;
+}
+
+.first-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: width 0.25s ease;
+}
+
+.first-nav a:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   HERO (MAIN)
+   ============================================ */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    padding: 60px 0;
+    flex-wrap: wrap;
+}
+
+.main-first {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.main-first h2 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-muted);
+}
+
+.main-first h2 a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.main-first h3 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.main-first input {
+    width: 100%;
+    max-width: 400px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.main-first input:focus {
+    outline: 2px solid #fff;
+    border-color: transparent;
+}
+
+.main-first button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.main-first button:hover {
+    background-color: #e0e0e0;
+}
+
+.main-first button:active {
+    transform: scale(0.98);
+}
+
+.main-first > a {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    text-decoration: underline;
+    margin-top: 4px;
+}
+
+.main-second {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-second img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+/* ============================================
+   SECTION HEADINGS
+   ============================================ */
+section > h3,
+.section-first > h3 {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 700;
+    margin: 0 0 20px;
+    padding: 0 4px;
+}
+
+section {
+    padding: 40px 0;
+}
+
+/* ============================================
+   EXPLORE BOXES
+   ============================================ */
+.boxs {
+    padding: 8px 0;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.box:hover {
+    border-color: #444;
+    transform: translateY(-2px);
+}
+
+.box-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.box-text h5 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.box-text p {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    max-width: 340px;
+}
+
+.box-text a {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.box-text a:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+.box-img img {
+    width: 133px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+/* ============================================
+   "HOW TO REQUEST" STEPS
+   ============================================ */
+.box-der {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.boxs-folder {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.box-img-folder img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.box-text-folder h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.box-text-folder h4 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--color-muted);
+    line-height: 1.5;
+}
+
+/* ============================================
+   PLAIN TEXT CTA
+   ============================================ */
+.plain-text {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 720px;
+}
+
+.plain-text h3 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+}
+
+.plain-text p {
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    color: var(--color-muted);
+}
+
+.plain-text a {
+    align-self: flex-start;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 2px;
+    font-weight: 500;
+}
+
+/* ============================================
+   MORE WAYS (CARDS)
+   ============================================ */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    padding: 20px 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 16px;
+    border-radius: var(--radius);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.card h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    flex: 1;
+}
+
+.card a {
+    align-self: flex-start;
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.card a:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+/* ============================================
+   EARN WITH UBER
+   ============================================ */
+.earn-folder {
+    padding: 40px 0;
+}
+
+.earn-folder > h1 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin-bottom: 24px;
+}
+
+.earn-box {
+    padding: 8px 0;
+}
+
+.earn-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.earn-card1,
+.earn-card2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: var(--radius);
+}
+
+.earn-card1 img,
+.earn-card2 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.earn-card1 h4,
+.earn-card2 h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.earn-card1 h5,
+.earn-card2 h5 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--color-muted);
+    flex: 1;
+}
+
+.earn-card1 a,
+.earn-card2 a {
+    align-self: flex-start;
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.earn-card1 a:hover,
+.earn-card2 a:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+/* ============================================
+   BUSINESS / FEATURE SPLIT
+   ============================================ */
+.ohter,
+.get {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+
+.ohter-img,
+.get1 {
+    flex: 1;
+    min-width: 300px;
+}
+
+.ohter-img img,
+.get1 img {
+    width: 100%;
+    max-width: 630px;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.ohter-text,
+.get2 {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ohter-text h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.ohter-text p,
+.get2 p {
+    font-size: 0.95rem;
+    color: var(--color-muted);
+}
+
+.ohter-text a,
+.get2 a {
+    align-self: flex-start;
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.ohter-text a:hover,
+.get2 a:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+/* ============================================
+   DOWNLOAD APPS
+   ============================================ */
+.easer {
+    padding: 40px 0;
+}
+
+.easer > h3 {
+    font-size: clamp(1.5rem, 2.8vw, 1.9rem);
+    margin-bottom: 20px;
+}
+
+.erser-folder {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.easre1,
+.easer2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 24px;
+    border-radius: var(--radius);
+    align-items: center;
+    text-align: center;
+}
+
+.easre1 img,
+.easer2 img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 9px;
+}
+
+.easre1 h4,
+.easer2 h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.easre1 p,
+.easer2 p {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 60px 0 24px;
+    border-top: 1px solid var(--border);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+footer > * {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+footer .first-1 {
+    margin-bottom: 40px;
+}
+
+footer .first-1 h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+footer .first-2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+footer .first-2 h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+footer .first-2 ul {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+footer .first-2 ul a {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer .first-2 ul a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer .last-line {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer .last-line h6 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--color-muted);
+}
+
+/* ============================================
+   RESPONSIVE — TABLET
+   ============================================ */
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+        padding: 40px 0;
+    }
+
+    .main-first {
+        align-items: center;
+    }
+
+    .main-first input {
+        max-width: 100%;
+    }
+
+    .ohter,
+    .get {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ohter-text,
+    .get2 {
+        align-items: center;
+    }
+
+    .ohter-text a,
+    .get2 a {
+        align-self: center;
+    }
+
+    footer .first-2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE
+   ============================================ */
+@media (max-width: 600px) {
+    .main-page {
+        padding: 0 16px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 16px;
+        padding-bottom: 8px;
+    }
+
+    .first-nav,
+    .second-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .box {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .box-text {
+        align-items: center;
+    }
+
+    .box-text a {
+        align-self: center;
+    }
+
+    .box-img img {
+        width: 100%;
+        height: 160px;
+    }
+
+    .plain-text {
+        padding: 40px 8px;
+    }
+
+    .plain-text a {
+        align-self: center;
+    }
+
+    section > h3,
+    .section-first > h3 {
+        text-align: center;
+    }
+
+    footer {
+        padding: 40px 0 20px;
+    }
+
+    footer .first-2 {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: center;
+    }
+
+    footer .first-1 {
+        text-align: center;
+    }
 }
